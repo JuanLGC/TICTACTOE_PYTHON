@@ -24,11 +24,10 @@ def check_for_winner():
         [a, b, c] = i
         if board[a] != "-" and board[b] != "-" and board[c] != "-":   
             if board[a] == board[b] and board[a] == board[c]:
-                print('YOU WON YOU SALAMAN BITCH')
+                print('YOU WON YOU CRAZY BASTARD!!!!!')
                 turn = 0
                 new_game()
-            else:
-                return False    
+              
     return False
     
 
@@ -57,7 +56,7 @@ while stop == False:
     
     if command == "stop":
         stop = True
-    elif "play" in command :
+    elif "play " in command :
         position_played = int(command[len(command) - 1]) - 1
         if board[position_played] != "-":
             print_board() 
@@ -69,3 +68,10 @@ while stop == False:
             check_for_winner() 
     elif command == "reset":
         new_game()
+    else:
+        print(f"""invalid command
+        Try using one of this commands:
+        play + number(1 to 9): to make your move by choosing in which position you want to play
+        reset: to start a new game
+        stop: to stop the game
+        """)
